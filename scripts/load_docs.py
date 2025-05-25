@@ -1,23 +1,23 @@
 import requests
-from bs4 import BeautifulSoup
+from unstructured.partition.html import partition_html
 
-def scrape_url(url: str, max_chars: int = 100_000) -> str:
+def scrape_and_structure(url: str, max_chars: int = 100_000) -> str:
     """
-    Scrape clean text content from a URL, focusing on useful tags.
-    Limits total output to avoid overload.
+    Scrape a webpage and extract structured content using unstructured.
     """
     try:
         res = requests.get(url, timeout=10)
         res.raise_for_status()
-        soup = BeautifulSoup(res.text, "html.parser")
 
-        # Target commonly useful content tags
-        elements = soup.find_all(["p", "li", "code", "pre", "h2", "h3"])
+        # Extract semantic content using unstructured
+        elements = partition_html(text=res.text)
+        content = "\n".join(str(el) for el in elements)
 
-        content = "\n".join(e.get_text(strip=True) for e in elements)
+        if len(content) > max_chars:
+            print(f"[Warning] Truncating to {max_chars} characters.")
+            content = content[:max_chars]
 
         return content
 
     except Exception as e:
-        raise RuntimeError(f"Failed to scrape URL '{url}': {e}")
-
+        raise RuntimeError(f"Failed to scrape URL: {e}")
