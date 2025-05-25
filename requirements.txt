@@ -1,0 +1,12 @@
+phidata
+groq
+python_dotenv
+streamlit
+googlesearch-python 
+pycountry
+duckduckgo-search
+beautifulsoup4
+requests
+lancedb
+sentence-transformers
+openai
