@@ -27,9 +27,9 @@ Thumbs.db
 *.out
 
 # === LanceDB and Vector Stores ===
-data/lancedb/
-*.lance
+# data/lancedb/
+# *.lance
 
 # === Conversation History ===
-data/conversation_history/
+# data/conversation_history/
 
