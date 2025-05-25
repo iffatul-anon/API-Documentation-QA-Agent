@@ -31,5 +31,5 @@ data/lancedb/
 *.lance
 
 # === Conversation History ===
-data/conversation_history/history.json
+data/conversation_history/
 
