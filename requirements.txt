@@ -10,3 +10,6 @@ requests
 lancedb
 sentence-transformers
 openai
+langchain
+"unstructured[all]"
+# unstructured[all]

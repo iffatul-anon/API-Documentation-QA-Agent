@@ -1,6 +1,7 @@
 import streamlit as st
 from scripts.query_agent import generate_combined_response
-from scripts.load_docs import scrape_url, chunk_text
+from scripts.load_docs import scrape_url
+from scripts.chunk_docs import chunk_text
 from scripts.embed_retrive_docs import embed_and_save_to_vectordb
 from scripts.conversation_load_and_save import load_conversation_history, save_conversation_history
 
@@ -19,7 +20,7 @@ def main():
             with st.spinner("Scraping and processing..."):
                 try:
                     text = scrape_url(url_input)
-                    chunks = chunk_text(text,500)
+                    chunks = chunk_text(text,500,50)
                     embed_and_save_to_vectordb(chunks)
                     st.success(f"{len(chunks)} chunks saved to VectorDB.")
                 except Exception as e:
