@@ -1,7 +1,7 @@
 import requests
 from unstructured.partition.html import partition_html
 
-def scrape_and_structure(url, max_chars = 100_000):
+def scrape_and_structure_data(url, max_chars = 100_000):
     """
     Scrape a webpage and extract structured content using unstructured.
     """
