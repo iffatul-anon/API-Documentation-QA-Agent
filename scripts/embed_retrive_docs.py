@@ -15,7 +15,11 @@ db = lancedb.connect(db_dir)
 
 def embed_and_save_to_vectordb(chunks: list[str]):
     vectors = embedder.encode(chunks).tolist()
-    data = [{"chunk_id": f"chunk_{i}", "text": chunk, "vector": vectors[i]} for i, chunk in enumerate(chunks)]
+    data = [{
+        "chunk_id": f"chunk_{i}", 
+        "text": chunk, 
+        "vector": vectors[i]
+    } for i, chunk in enumerate(chunks)]
     df = pd.DataFrame(data)
     table = db.create_table(table_name, data=df, mode="overwrite")
     return table

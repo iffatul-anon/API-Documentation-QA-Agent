@@ -1,7 +1,7 @@
 import requests
 from unstructured.partition.html import partition_html
 
-def scrape_and_structure_data(url, max_chars = 100_000):
+def scrape_and_structure_data(url):
     """
     Scrape a webpage and extract structured content using unstructured.
     """
@@ -12,10 +12,6 @@ def scrape_and_structure_data(url, max_chars = 100_000):
         # Extract semantic content using unstructured
         elements = partition_html(text=res.text)
         content = "\n".join(str(el) for el in elements)
-
-        if len(content) > max_chars:
-            print(f"[Warning] Truncating to {max_chars} characters.")
-            content = content[:max_chars]
 
         return content
 

@@ -1,10 +1,10 @@
 import os
 import json
 
-CONVO_HISTORY_DIR = "data/conversation_history"
+CONVERSATION_HISTORY_DIR = "data/conversation_history"
 
 def get_history_path():
-    return os.path.join(CONVO_HISTORY_DIR, "history.json")
+    return os.path.join(CONVERSATION_HISTORY_DIR, "history.json")
 
 def load_conversation_history():
     path = get_history_path()
@@ -14,6 +14,6 @@ def load_conversation_history():
     return []
 
 def save_conversation_history(history):
-    os.makedirs(CONVO_HISTORY_DIR, exist_ok=True)
+    os.makedirs(CONVERSATION_HISTORY_DIR, exist_ok=True)
     with open(get_history_path(), "w") as f:
         json.dump(history, f, indent=4)
