@@ -1,12 +1,51 @@
+"""
+API Documentation Q&A Agent - Main Application
+
+This is the main entry point for the API Documentation Q&A Agent application.
+It provides a Streamlit-based web interface for users to interact with the
+documentation assistant. Users can load API documentation from URLs, ask
+questions, and maintain conversation history across sessions.
+
+Features:
+- Load and process API documentation from URLs
+- Interactive chat interface with conversation history
+- Vector-based semantic search for relevant documentation
+- LLM-powered responses using RAG pattern
+- Persistent conversation history
+
+Usage:
+    Run the application using:
+    ```bash
+    streamlit run main.py
+    ```
+
+Dependencies:
+    - streamlit
+    - All custom modules in scripts/
+"""
+
 import streamlit as st
 from scripts.query_agent import generate_combined_response
 from scripts.load_docs import scrape_and_structure_data
 from scripts.chunk_docs import chunk_text
 from scripts.embed_retrive_docs import embed_and_save_to_vectordb
 from scripts.conversation_load_and_save import load_conversation_history, save_conversation_history
+from typing import List, Dict
 
-def main():
-    st.title("📘 API Documentation Q&A Agent")
+def main() -> None:
+    """
+    Main application function that sets up the Streamlit interface and handles
+    the interaction flow.
+
+    The function:
+    1. Sets up the main UI components
+    2. Handles documentation loading from URLs
+    3. Manages conversation state and history
+    4. Processes user inputs and displays responses
+
+    No parameters or return values as this is the top-level application function.
+    Stores state in st.session_state and handles all UI interactions directly.
+    """
 
     # Sidebar for options
     with st.sidebar:
