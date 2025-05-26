@@ -20,10 +20,6 @@ from phi.tools.googlesearch import GoogleSearch
 from dotenv import load_dotenv
 from scripts.embed_retrive_docs import search_vectordb
 from typing import List, Dict, Tuple, Optional
-import logging
-
-# Initialize logging
-logger = logging.getLogger(__name__)
 
 # Load environment variables from .env file
 load_dotenv()

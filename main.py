@@ -30,7 +30,7 @@ from scripts.load_docs import scrape_and_structure_data
 from scripts.chunk_docs import chunk_text
 from scripts.embed_retrive_docs import embed_and_save_to_vectordb
 from scripts.conversation_load_and_save import load_conversation_history, save_conversation_history
-from typing import List, Dict
+from typing import List, Dict, Optional
 
 def main() -> None:
     """

@@ -7,7 +7,7 @@ into chunks while preserving semantic meaning where possible.
 """
 
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from typing import List
+from typing import List, Optional
 
 def chunk_text(text: str, chunk_size: int = 500, chunk_overlap: int = 100) -> List[str]:
     """

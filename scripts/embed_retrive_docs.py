@@ -17,11 +17,6 @@ import pandas as pd
 import lancedb
 from sentence_transformers import SentenceTransformer
 from typing import List, Optional, Any
-import logging
-
-# Initialize logging
-logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger(__name__)
 
 # Initialize embedding model and LanceDB
 embedder = SentenceTransformer("all-MiniLM-L6-v2")

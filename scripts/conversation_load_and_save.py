@@ -9,7 +9,7 @@ and distinguishes between user and assistant messages.
 
 import os
 import json
-from typing import List, Dict, Union
+from typing import List, Dict, Optional
 
 # Directory where conversation history files are stored
 CONVERSATION_HISTORY_DIR = "data/conversation_history"
