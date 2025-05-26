@@ -22,7 +22,7 @@ A lightweight AI agent that answers natural language questions about APIs using 
 |------------------|------------------------------------------|---------------------------------------------------------------------------------------|
 | Language         | Python                                   | Widely used for AI/ML and rapid prototyping; strong library ecosystem                 |
 | LLM              | Groq (LLaMA 3.3 70B Versatile)           | This open-source free LLM model provides high-performance inference for complex queries with minimal latency |
-| Framework        | Phidata                                  | Lightweight framework that simplifies building agent-based workflows                  |
+| Agent Framework  | Phidata                                  | Lightweight framework that simplifies building agent-based workflows                  |
 | Vector DB        | LanceDB                                  | Chosen for its performance and simplicity; ideal for lightweight, local deployments   |
 | Embeddings       | SentenceTransformers (MiniLM-L6-v2)      | Offers a strong balance between speed and accuracy for generating semantic embeddings |
 | Scraping         | Unstructured Library                     | Parses diverse content types like HTML and Markdown into structured text              |
