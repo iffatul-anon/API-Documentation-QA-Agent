@@ -9,5 +9,5 @@ requests
 lancedb
 sentence-transformers
 langchain
-"unstructured[all]"
-# unstructured[all]
+unstructured[all]
+# "unstructured[all]"
