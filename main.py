@@ -46,6 +46,8 @@ def main() -> None:
     No parameters or return values as this is the top-level application function.
     Stores state in st.session_state and handles all UI interactions directly.
     """
+    # Title
+    st.title("📘 API Documentation Q&A Agent")
 
     # Sidebar for options
     with st.sidebar:
